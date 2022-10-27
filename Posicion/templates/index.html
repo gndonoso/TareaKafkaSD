@@ -1,0 +1,21 @@
+<head>
+    <meta http-equiv="refresh" content="0.5">
+</head>
+
+<h1>Ubicaciones</h1>
+
+{% for carrito in carritos %}
+
+<h2>Carrito {{carrito[0]}}</h2>
+<h3>Posición: {{carrito[1]}}, {{carrito[2]}}</h3>
+
+{% endfor %}
+
+<h1>Avisos</h1>
+
+{% for perdido in perdidos%}
+
+<h2>Carrito {{perdido[0]}}</h2>
+<h3>Posición: {{perdido[1]}}, {{perdido[2]}}</h3>
+<h3>Hora: {{perdido[3]}} </h3>
+{% endfor %}

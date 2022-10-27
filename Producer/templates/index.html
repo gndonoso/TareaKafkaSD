@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Nueva Venta</h1>
+
+<form action="/NuevaVenta" method="post">
+  <label for="carrito">Carrito:</label>
+  <select id="carrito" name="carrito">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br>
+  <label for="cliente">Cliente:</label>
+  <input type="text" id="cliente" name="cliente"><br>
+  <label for="cantidad">Cantidad:</label>
+  <input type="number" id="cantidad" name="cantidad">
+  <input type="hidden" id="hora" name="hora" value="">
+  <input type="hidden" id="segundos" name="segundos" value="">
+  <label for="stock">Stock restante:</label>
+  <input type="number" id="stock" name="stock"><br>
+  <input type="hidden" id="Latitud" name="Latitud" value="">
+  <input type="hidden" id="Longitud" name="Longitud" value="">
+  <input type="submit" value="Ingresar">
+</form> 
+
+<h1>Aviso</h1>
+
+<form action="/Aviso" method="post">
+  <input type="hidden" id="LatitudAviso" name="LatitudAviso" value="">
+  <input type="hidden" id="LongitudAviso" name="LongitudAviso" value="">
+  <input type="hidden" id="horaAviso" name="horaAviso" value="">
+  <label for="carrito">Carrito:</label>
+  <select id="carrito" name="carrito">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+  </select><br>
+  <input type="submit" value="Crear Aviso">
+</form> 
+
+</body>
+</html>
+
+<script>
+  setInterval(hora, 300);
+  setInterval(ubicacion, 300);
+  function ubicacion(){
+    latitud = document.getElementById("Latitud");
+    longitud = document.getElementById("Longitud");
+    latitudAviso = document.getElementById("LatitudAviso");
+    longitudAviso = document.getElementById("LongitudAviso");
+    longitud.value = Math.random() * (70.0 - 60.0) + 60.0;
+    latitud.value = Math.random() * (20.0 - 10.0) + 10.0;
+    longitudAviso.value = Math.random() * (70.0 - 60.0) + 60.0;
+    latitudAviso.value = Math.random() * (20.0 - 10.0) + 10.0;
+  }
+  function hora(){
+    myDate = new Date();
+    hours = myDate.getHours();
+    minutes = myDate.getMinutes();
+    seconds = myDate.getSeconds();
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("hora").value = hours+ ":" +minutes+ ":" +seconds;
+    document.getElementById("horaAviso").value = hours+ ":" +minutes+ ":" +seconds;
+    document.getElementById("segundos").value = hora = Date.now()/1000;
+  }
+</script>

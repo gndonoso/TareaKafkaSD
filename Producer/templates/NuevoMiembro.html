@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Ingresar Nuevo Miembro</h1>
+
+<form action="/NuevoMiembro" method="post">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="lastname">Apellido:</label>
+    <input type="text" id="lastname" name="lastname"><br>
+    <label for="rut">RUT:</label>
+    <input type="number" id="rut" name="rut"><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br>
+    <label for="patente">Patente:</label>
+    <input type="text" id="patente" name="patente"><br>
+    <label for="premium">Premium:</label>
+    <select id="premium" name="premium">
+        <option value="true">Si</option>
+        <option value="false">No</option>
+    </select><br>
+  <input type="submit" value="Ingresar">
+</form> 
+
+</body>
+</html>

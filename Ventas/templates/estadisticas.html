@@ -1,0 +1,13 @@
+<h1>Estadisticas por carrito</h1>
+
+{% for estadistica in estadisticas %}
+    <h2>Carrito {{estadistica[0]}}</h2>
+    <h3>Ventas Totales: {{estadistica[1]}}</h2>
+    <h3>Sopaipillas Vendidas: {{estadistica[2]}}</h2>
+    <h3>Promedio de sopaipillas por venta: {{estadistica[3]}}</h2>
+    {% for promedio in promedios %}
+        {% if estadistica[0] ==  promedio[0] %}
+            <h3>Promedio cliente {{promedio[1]}}: {{promedio[2]}}</h2>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
